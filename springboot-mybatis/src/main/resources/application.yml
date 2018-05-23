@@ -5,19 +5,19 @@ mybatis:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    password: iafclub
+    password: root
     username: root
-    url: jdbc:mysql://172.18.243.56:3306/test?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8
   mail:
     default-encoding: UTF-8
-    username: jsadmin@jrzhuxue.com
+    username: 123456@qq.com
     password: Aa123456
-    host: smtp.jrzhuxue.com
+    host: smtp.qq.com
   redis:
     database: 0
-    host: 172.18.243.56
+    host: 127.0.0.1
     port: 6379
-    password: jrzhuxue
+    password: redis
     pool:
       max-active: 8
       max-wait: -1
@@ -34,7 +34,7 @@ spring:
 server:
   context-path: /springMyBatis
   port: 8083
-mail.fromMail.addr: jsadmin@jrzhuxue.com
+mail.fromMail.addr: 123456@qq.com
 
 
 
