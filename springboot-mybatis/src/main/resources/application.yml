@@ -1,0 +1,41 @@
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.oyb.springbootmybatis.mapper
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: iafclub
+    username: root
+    url: jdbc:mysql://172.18.243.56:3306/test?useUnicode=true&characterEncoding=utf-8
+  mail:
+    default-encoding: UTF-8
+    username: jsadmin@jrzhuxue.com
+    password: Aa123456
+    host: smtp.jrzhuxue.com
+  redis:
+    database: 0
+    host: 172.18.243.56
+    port: 6379
+    password: jrzhuxue
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
+  rabbitmq:
+    addresses: 127.0.0.1:5672
+    username: guest
+    password: guest
+    publisher-confirms: true
+    virtual-host: /
+
+server:
+  context-path: /springMyBatis
+  port: 8083
+mail.fromMail.addr: jsadmin@jrzhuxue.com
+
+
+
+

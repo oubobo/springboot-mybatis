@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oyb.springbootmybatis.mapper.MybatisInfoMapper" >
+    <resultMap id="BaseResultMap" type="com.oyb.springbootmybatis.vo.MybatisInfoVO" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="age" property="age" jdbcType="VARCHAR" />
+        <result column="cup_size" property="cupSize" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        id, age, cup_size
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap"  >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM test.t_mybatis_info
+    </select>
+
+    <select id="getOne" parameterType="java.lang.Long" resultMap="BaseResultMap" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM test.t_mybatis_info
+        WHERE id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="com.oyb.springbootmybatis.vo.MybatisInfoVO" >
+        INSERT INTO
+        test.t_mybatis_info
+        (age,cup_size)
+        VALUES
+        (#{age}, #{cupSize})
+    </insert>
+
+    <update id="update" parameterType="com.oyb.springbootmybatis.vo.MybatisInfoVO" >
+        UPDATE
+        test.t_mybatis_info
+        SET
+        <if test="age != null">age = #{age},</if>
+        <if test="cupSize != null">cup_size = #{cupSize}</if>
+
+        WHERE
+        id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Long" >
+        DELETE FROM
+         test.t_mybatis_info
+        WHERE
+        id =#{id}
+    </delete>
+
+</mapper>
